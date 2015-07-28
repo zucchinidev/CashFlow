@@ -3,3 +3,4 @@ vendor/
 OtrasPosibilidades/
 .idea/
 npm-debug.log
+scripts/crud.js
