@@ -1,0 +1,18 @@
+{
+  "name": "cash-flow",
+  "version": "1.0.0",
+  "description": "Controla tu flujo de dinero",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrea Zucchini García",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.1"
+  }
+}

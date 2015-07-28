@@ -1,0 +1,52 @@
+<div class="m++ mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                Ingresos
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <p class="mdl-color--green-300 mdl-color-text--white">
+                {{ cash.total.income | number:2 }} €
+            </p>
+            <p>
+                Acumulado
+            </p>
+        </div>
+    </div>
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                Gastos
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <p class="mdl-color--red-300 mdl-color-text--white">
+                {{ cash.total.expenses | number:2 }} €
+            </p>
+            <p>
+                Total de gastos
+            </p>
+        </div>
+    </div>
+
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                Balance
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+             <p class="label label-small tc-white"
+                   ng-class="{'mdl-color--red-300': cash.balance() < 0,
+                                'mdl-color--green-300': cash.balance() >= 0}">
+                {{ cash.balance() | number:2 }} €
+             </p>
+            <p>
+                Ingresos-gastos
+            </p>
+        </div>
+    </div>
+</div>

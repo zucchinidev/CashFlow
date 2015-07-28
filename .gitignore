@@ -1,0 +1,5 @@
+node_modules/
+vendor/
+OtrasPosibilidades/
+.idea/
+npm-debug.log

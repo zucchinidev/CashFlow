@@ -1,0 +1,21 @@
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__title">
+
+    </div>
+    <div class="mdl-card__supporting-text">
+        <p>
+            Categoría: {{ mv.movement.category }}
+        </p>
+        <p>
+            Fecha del movimiento: {{ mv.movement.date | date }}
+        </p>
+        <p>
+            Cantidad: {{ mv.movement.quantity }} €
+        </p>
+    </div>
+    <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">delete</i>
+        </button>
+    </div>
+</div>

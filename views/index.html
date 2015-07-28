@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="cashFlowApp">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Controla el flujo de tu dinero desde el día uno de mes.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Control Cash Flow</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="material-design-lite/material.min.css">
+
+</head>
+<body>
+    <div ng-controller="MenuController as menu" class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    {{ menu.section }}
+                </span>
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="search" />
+                        <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                    <li class="mdl-menu__item">
+                        <a ui-sref="signin">
+                            Login
+                        </a>
+                    </li>
+                    <li class="mdl-menu__item">
+                        <a ui-sref="signup">
+                            Signup
+                        </a>
+                    </li>
+                    <!--<li class="mdl-menu__item">Legal information</li>-->
+                </ul>
+            </div>
+        </header>
+        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-600 mdl-color-text--blue-grey-50">
+            <header class="demo-drawer-header text-center mt++">
+                <img src="img/avatar.jpeg" class="demo-avatar">
+                <div class="demo-avatar-dropdown mt++ mb++">
+                    <span ng-if="menu.loggedUser">
+                        {{ menu.loggedUser }}
+                    </span>
+                    <span ng-if="!menu.loggedUser">
+                        Anónimo
+                    </span>
+                </div>
+            </header>
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+                <a class="mdl-navigation__link" href="">
+                    <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>
+                    Home
+                </a>
+                <a ui-sref="list" class="mdl-navigation__link" href="">
+                    <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>
+                    Movimientos
+                </a>
+                <a ui-sref="new" class="mdl-navigation__link" href="">
+                    <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>
+                    Nuevo
+                </a>
+                <a ui-sref="total" class="mdl-navigation__link" href="">
+                    <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>
+                    Totales
+                </a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content mdl-color--grey-100">
+            <div class="mdl-grid">
+                <div ui-view class="mdl-color--white mdl-shadow--2dp mdl-cell
+                            mdl-cell--9-col mdl-grid">
+
+                </div>
+
+                <div id="mdl-card-dashboard-message" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">
+                            Cash Flow
+                        </h2>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-color--blue-grey-300 mdl-color-text--white">
+                        Para que tus gastos no te pillen de sorpresa.
+                        Podrás realizar un seguimiento en tiempo real.
+                        Comprueba de dónde viene y a dónde va tu dinero.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            ¿Empezamos?
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">share</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="material-design-lite/material.min.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular-cookies/angular-cookies.js"></script>
+    <script src="angular-resource/angular-resource.js"></script>
+    <script src="angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <!-- Nota: inserto el log antes, por si existiera algún fallo de seguridad,
+    se almacenaría log y nos permitiría ver la request-->
+    <script src="appHttpLog.js"></script>
+    <script src="appSecurity.js"></script>
+    <script src="CashController.js"></script>
+    <script src="RegisterController.js"></script>
+    <script src="MovementController.js"></script>
+    <script src="MenuController.js"></script>
+    <script src="movementsFactory.js"></script>
+    <script src="categoriesFactory.js"></script>
+    <script src="external.js"></script>
+
+</body>
+</html>

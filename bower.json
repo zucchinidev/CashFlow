@@ -1,0 +1,31 @@
+{
+  "name": "CashFlow",
+  "version": "0.0.0",
+  "authors": [
+    "azga84@gmail.com <azga84@gmail.com>"
+  ],
+  "description": "App para controlar cash mensual",
+  "main": "app.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-route": "1.4",
+    "angular-ui-router": "~0.2.15",
+    "angular-cookies": "~1.4.3",
+    "angular-resource": "~1.4.3",
+    "material-design-lite": "~1.0.1"
+  },
+  "devDependencies": {
+    "qunit": "~1.18.0"
+  }
+}

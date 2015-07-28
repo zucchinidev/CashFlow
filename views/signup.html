@@ -1,0 +1,21 @@
+<div class="m++ mdl-cell mdl-cell--9-col mdl-grid">
+    <form>
+        <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" ng-model="register.user.email" type="text" id="email" />
+            <label class="mdl-textfield__label" for="email">
+                Email
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"  ng-model="register.user.password" type="password" id="password" />
+            <label class="mdl-textfield__label" for="password">
+                Password
+            </label>
+        </div>
+        <button ng-click="register.signup()"
+                class="mdl-button--colored mdl-button mdl-js-button
+                mdl-button--raised mdl-js-ripple-effect">
+            Signup
+        </button>
+    </form>
+</div>

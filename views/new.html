@@ -1,0 +1,94 @@
+<div class="m++ mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                ¿Ingresos o gastos?
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Selecciona el tipo de acción para que las categorías cambien dinámicamente, después elige una.
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    ng-class="{'mdl-button--raised': cash.newMovement.entry === 1}"
+                    ng-click="cash.newMovement.entry = 1;">
+                Ingresos
+            </button>
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    ng-class="{'mdl-button--raised': cash.newMovement.entry === 0}"
+                    ng-click="cash.newMovement.entry = 0;">
+                Gastos
+            </button>
+        </div>
+    </div>
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                Ahora escoge
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Posteriormente podrás filtrar por categoría. Si no encuentras la adecuada, puedes crear las que desees.
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <select class="personal-select" ng-show="cash.newMovement.entry === 1" ng-options="category for category in cash.categories.categoryEntry"
+                    ng-model="cash.newMovement.category">
+                <option disabled value="">Ingresos</option>
+
+            </select>
+            <select class="personal-select" ng-show="cash.newMovement.entry === 0" ng-options="category for category in cash.categories.categorySpending"
+                    ng-model="cash.newMovement.category">
+                <option disabled value="">Gastos</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                Fecha del movimiento
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Obtendrás un reporte día a día de los movimientos de dinero que vayas efectuando.
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" ng-model="cash.newMovement.date" type="date" id="insert-date" />
+                <label class="mdl-textfield__label"  for="insert-date">
+
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">
+                Cantidad
+            </h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Y lo más importante, inserta la cantidad del gasto o ingreso.
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" ng-model="cash.newMovement.quantity" type="number" id="insert-quantity" />
+                <label class="mdl-textfield__label" for="insert-quantity">
+                    Cantidad
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col center-block">
+        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--raised"
+                ng-click="cash.saveMovement()">
+            Guardar {{cash.newMovement.entry && 'Ingresos' || 'Gastos'}}
+        </button>
+    </div>
+    <div>
+        {{ cash.movements | json }}
+    </div>
+</div>

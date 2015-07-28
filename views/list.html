@@ -1,0 +1,60 @@
+<!-- ../views/list.html-->
+
+<div class="list-container-search mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--expandable textfield-demo">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="list-search">
+        <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" ng-model="search" id="list-search" />
+        <label class="mdl-textfield__label" for="list-search">Búsqueda...</label>
+    </div>
+</div>
+<table width="100%" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">
+            <a href="" ng-click="field = 'id'; direction = (field === 'id' && !direction)">
+                Id
+            </a>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            <a href="" ng-click="field = 'date'; direction = (field === 'date' && !direction)">
+                Fecha
+            </a>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            Categoría
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            Tipo
+        </th>
+        <th>
+            <a href="" ng-click="field = 'quantity'; direction = (field === 'quantity' && !direction)">
+                Cantidad
+            </a>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="movement in cash.movements | filter:search | orderBy: field:direction">
+        <td class="mdl-data-table__cell--non-numeric">
+            <a ui-sref="movement({id: movement.id })">
+                {{ movement.id }}
+            </a>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            {{ movement.date | date }}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            {{ movement.category }}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            {{ movement.type }}
+        </td>
+        <td>
+            {{ movement.quantity | number:2 }}
+        </td>
+    </tr>
+    </tbody>
+</table>

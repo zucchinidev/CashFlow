@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+//======================================================================================================================
+//
+//             Mixins de la aplicación, en este fichero insertaremos los mixin o funciones
+//             comunes al proyecto
+//
+//======================================================================================================================
+
+/// Generar sombra
+/// @param {string} $lugar [outset] Lugar de la sombra, por defecto por dentro
+/// @param {string} $eje-x [10px] Propagación eje x de la sombra
+/// @param {string} $eje-y [10px] Propagación eje y de la sombra
+/// @param {string} $blur [10px] Desenfoque de la sombra
+/// @param {string} $radio-propagacion [10px] radio de propagación de la sombra
+/// @param {string} $rgba [rgba(0,0,0,0.5)] Color y opacidad de la sombra
+@mixin box-shadow($lugar: outset, $eje-x: 10px, $eje-y: 10px, $blur: 10px, $radio-propagacion: 10px, $rgba: rgba(0, 0, 0, 0.5)) {
+  -webkit-box-shadow: $lugar, $eje-x, $eje-y, $blur, $radio-propagacion, $rgba;
+  -moz-box-shadow: $lugar, $eje-x, $eje-y, $blur, $radio-propagacion, $rgba;
+  -ms-box-shadow: $lugar, $eje-x, $eje-y, $blur, $radio-propagacion, $rgba;
+  box-shadow: $lugar, $eje-x, $eje-y, $blur, $radio-propagacion, $rgba;
+}
+
+/// Eliminar sombra
+@mixin box-shadow-none {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+
+/// Mixin para generar media queries asocidado a un elemento
+/// @param {string} $break-point [xs-width] Medida en píxeles del punto de ruptura
+/// @param {string} $min-max [max] aplica min o max width
+/// @param {string} $measure [width] Por defecto se aplica al ancho
+@mixin media($break-point: map-get($map-break-points, xs-width), $min-max: max, $measure: width) {
+  @if map-has-key($map-break-points, $break-point) {
+    @media all and (#{$min-max}-#{$measure}: map-get($map-break-points, $break-point)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "No es posible establecer media queries que no estén en el rango del mapa $map-break-points, ancho #{$break-point} no permitido";
+  }
+}
+// Ejemplo de uso:
+//  html, body
+//    @include media(xs-width)
+//      height: 50%
+
+//  Result
+//    @media all and (max-width: 480px) {
+//      html, body {
+//        height: 50%; } }
+// ========================================================
+// ========================================================
+
+
+
+
+//======================================================================================================================
+//
+//                                          EXTENDS
+//
+//======================================================================================================================
+
+%clearfix:before,
+%clearfix:after {
+  // evita un bug en Opera
+  content: " ";
+  // Esto es por si controlamos los margenes de elementos secundarios con before
+  display: table;
+}
+
+%clearfix:after {
+  clear: both;
+}
+
+// Ejemplo de uso : @extend %clearfix en un elemento
+
+%display-inline {
+  display: inline;
+}
+
+%no-radius {
+  border-radius: 0;
+}
+
+%no-padding {
+  padding: 0;
+}

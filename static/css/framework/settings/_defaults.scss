@@ -1,0 +1,107 @@
+///=====================================================================================================================
+///
+///
+///                                             DEFAULTS
+///
+///
+///=====================================================================================================================
+
+$base-font-family:            "Open Sans", sans-serif !default;
+$base-font-size:              13 * 1px        !default;
+$base-font-weight:            normal          !default;
+$base-text-color:             $black-1        !default;
+$base-background-color:       $grey-200       !default;
+$base-round:                  2px             !default;
+
+
+
+// Colors and sizes
+// Feel free to override and set new values for your project.
+
+// Main colors
+$red:                   $red-800            !default;
+$pink:                  $pink-500           !default;
+$purple:                $purple-500         !default;
+$deep-purple:           $deep-purple-500    !default;
+$indigo:                $indigo-500         !default;
+$blue:                  $blue-500           !default;
+$light-blue:            $light-blue-500     !default;
+$cyan:                  $cyan-500           !default;
+$teal:                  $teal-500           !default;
+$green:                 $green-500          !default;
+$light-green:           $light-green-500    !default;
+$lime:                  $lime-500           !default;
+$yellow:                $yellow-800         !default;
+$amber:                 $amber-500          !default;
+$orange:                $orange-800         !default;
+$deep-orange:           $deep-orange-500    !default;
+$brown:                 $brown-500          !default;
+$grey:                  $grey-500           !default;
+$blue-grey:             $blue-grey-500      !default;
+
+
+$primary-color-1:       $indigo     !default;
+$primary-color-2:       $indigo-100 !default;
+$primary-color-3:       $indigo-700 !default;
+$accent-color-1:        $pink-A200  !default;
+$accent-color-2:        $pink-A100  !default;
+$accent-color-3:        $pink-A400  !default;
+
+// Sizes
+$size-m:                36px !default;
+$size-xs:               24px !default;
+$size-s:                30px !default;
+$size-l:                40px !default;
+$size-xl:               56px !default;
+
+
+$base-spacing-unit:     8px;
+
+// == Anchos base media queries
+$xs-width: 480 * 1px;
+$sm-width: 768 * 1px;
+$md-width: 992 * 1px;
+$lg-width: 1200 * 1px;
+
+
+
+
+// == Maps
+
+$map-break-points: (
+        xs-width: $xs-width,
+        sm-width: $sm-width,
+        md-width: $md-width,
+        lg-width: $lg-width
+);
+
+$colors: (
+        'red': $red-800,
+        'pink': $pink,
+        'purple': $purple,
+        'deep-purple': $deep-purple,
+        'indigo': $indigo,
+        'blue': $blue,
+        'light-blue': $light-blue,
+        'cyan' : $cyan ,
+        'teal': $teal,
+        'green': $green,
+        'light-green': $light-green,
+        'lime': $lime,
+        'yellow': $yellow,
+        'amber': $amber,
+        'orange': $orange,
+        'deep-orange': $deep-orange,
+        'brown': $brown,
+        'grey': $grey,
+        'blue-grey': $blue-grey,
+        'black': $black,
+        'white': $white
+);
+$sizes: (
+        'xs': $size-xs,
+        's': $size-s,
+        'm': $size-m,
+        'l': $size-l,
+        'xl': $size-xl
+);
