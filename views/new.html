@@ -71,13 +71,22 @@
             </h2>
         </div>
         <div class="mdl-card__supporting-text">
-            Y lo más importante, inserta la cantidad del gasto o ingreso.
+            Y lo más importante, inserta la cantidad del gasto o ingreso y si deseas algún tipo de aclaración.
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" ng-model="cash.newMovement.quantity" type="number" id="insert-quantity" />
                 <label class="mdl-textfield__label" for="insert-quantity">
                     Cantidad
+                </label>
+            </div>
+        </div>
+
+        <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" ng-model="cash.newMovement.text" type="text" id="insert-text" />
+                <label class="mdl-textfield__label" for="insert-text">
+                    Inserta algún tipo de aclaración
                 </label>
             </div>
         </div>

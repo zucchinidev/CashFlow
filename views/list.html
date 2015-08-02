@@ -1,6 +1,7 @@
 <!-- ../views/list.html-->
 
-<div class="list-container-search mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--expandable textfield-demo">
+<div class="list-container-search mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield
+    mdl-textfield--expandable field-search">
     <label class="mdl-button mdl-js-button mdl-button--icon" for="list-search">
         <i class="material-icons">search</i>
     </label>
@@ -8,14 +9,25 @@
         <input class="mdl-textfield__input" type="text" ng-model="search" id="list-search" />
         <label class="mdl-textfield__label" for="list-search">Búsqueda...</label>
     </div>
+
+</div>
+
+
+<div class="list-container-search mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield
+    mdl-textfield--expandable greather-than-search">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="greater-than">
+        <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" ng-model="greaterThan" id="greater-than" />
+        <label class="mdl-textfield__label" for="greater-than">Búsqueda...</label>
+    </div>
 </div>
 <table width="100%" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
     <tr>
-        <th class="mdl-data-table__cell--non-numeric">
-            <a href="" ng-click="field = 'id'; direction = (field === 'id' && !direction)">
-                Id
-            </a>
+        <th class="mdl-data-table__cell--non-numeric text-center">
+            Ver
         </th>
         <th class="mdl-data-table__cell--non-numeric">
             <a href="" ng-click="field = 'date'; direction = (field === 'date' && !direction)">
@@ -37,23 +49,21 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="movement in cash.movements | filter:search | orderBy: field:direction">
-        <td class="mdl-data-table__cell--non-numeric">
-            <a ui-sref="movement({id: movement.id })">
-                {{ movement.id }}
-            </a>
+    <tr ng-repeat="movement in cash.movements | greaterThan:greaterThan ">
+        <td class="mdl-data-table__cell--non-numeric text-center">
+            <i ui-sref="movement({id: movement.id })" class="cursor-poiter material-icons">visibility</i>
         </td>
         <td class="mdl-data-table__cell--non-numeric">
             {{ movement.date | date }}
         </td>
         <td class="mdl-data-table__cell--non-numeric">
-            {{ movement.category }}
+            {{ movement.category | truncate:10:'...' }}
         </td>
         <td class="mdl-data-table__cell--non-numeric">
             {{ movement.type }}
         </td>
         <td>
-            {{ movement.quantity | number:2 }}
+            {{ movement.quantity | currency  }}
         </td>
     </tr>
     </tbody>

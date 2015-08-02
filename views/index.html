@@ -32,15 +32,15 @@
 </head>
 <body>
     <div ng-controller="MenuController as menu" class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-        <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+        <header class="main-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
             <div class="mdl-layout__header-row">
                 <span class="mdl-layout-title">
                     {{ menu.section }}
                 </span>
                 <div class="mdl-layout-spacer"></div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable header-search">
                     <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                        <i class="material-icons">search</i>
+                        <i class="material-icons mdl-color-text--grey-600">search</i>
                     </label>
                     <div class="mdl-textfield__expandable-holder">
                         <input class="mdl-textfield__input" type="text" id="search" />
@@ -66,7 +66,7 @@
             </div>
         </header>
         <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-600 mdl-color-text--blue-grey-50">
-            <header class="demo-drawer-header text-center mt++">
+            <header class="sidebar-header text-center pt++">
                 <img src="img/avatar.jpeg" class="demo-avatar">
                 <div class="demo-avatar-dropdown mt++ mb++">
                     <span ng-if="menu.loggedUser">
@@ -128,8 +128,8 @@
             </div>
         </main>
     </div>
-    <script src="material-design-lite/material.min.js"></script>
     <script src="angular/angular.js"></script>
+    <script src="angular-locale_es-es/angular-locale_es-es.js"></script>
     <script src="angular-cookies/angular-cookies.js"></script>
     <script src="angular-resource/angular-resource.js"></script>
     <script src="angular-ui-router/release/angular-ui-router.js"></script>
@@ -145,6 +145,10 @@
     <script src="movementsFactory.js"></script>
     <script src="categoriesFactory.js"></script>
     <script src="external.js"></script>
+    <script src="zucStringFilters.js"></script>
+    <script src="zucMovementsFilters.js"></script>
+    <script src="material-design-lite/material.min.js"></script>
+
 
 </body>
 </html>
