@@ -97,6 +97,8 @@
       vm.movements = movementsFactory.movements.query();
       vm.total = movementsFactory.total.get();
       vm.newMovement.cuantity = 0;
+      vm.newMovement.entry = 1;
+      vm.newMovement.date = new Date();
     }
   }
 })();
