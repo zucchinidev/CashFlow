@@ -23,9 +23,11 @@
     "angular-ui-router": "~0.2.15",
     "angular-cookies": "~1.4.3",
     "angular-resource": "~1.4.3",
-    "material-design-lite": "~1.0.1"
+    "material-design-lite": "~1.0.1",
+    "angular-locale_es-es": "*"
   },
   "devDependencies": {
-    "qunit": "~1.18.0"
+    "qunit": "~1.18.0",
+    "angular-mocks": "~1.4.3"
   }
 }
