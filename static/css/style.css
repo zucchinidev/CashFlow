@@ -1746,6 +1746,9 @@
 .no-pad {
   padding: 0; }
 
+.cursor-poiter {
+  cursor: pointer; }
+
 #view-source {
   position: fixed;
   display: block;
@@ -1774,5 +1777,12 @@
   padding-top: 5px;
   padding-bottom: 5px;
   border: solid 1px #E8E8E8; }
+
+.main-header .mdl-layout__drawer-button .material-icons {
+  color: #757575; }
+
+header.sidebar-header {
+  background: url("../img/money-lineal.png") no-repeat;
+  background-position: 45% 81%; }
 
 /*# sourceMappingURL=style.css.map */

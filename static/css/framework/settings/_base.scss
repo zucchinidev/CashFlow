@@ -620,17 +620,21 @@
 .word-break { word-break: break-all; }
 
 .panel-grey-bg {
-  @extend .bgc-grey-100;
-  border: 1px solid;
-  border-color: $grey-50;
+    @extend .bgc-grey-100;
+    border: 1px solid;
+    border-color: $grey-50;
 }
 
 .no-radius {
-  @extend %no-radius;
+    @extend %no-radius;
 }
 
 .no-pad {
-  @extend %no-padding;
+    @extend %no-padding;
+}
+
+.cursor-poiter {
+    @extend %cursor-pointer;
 }
 
 
