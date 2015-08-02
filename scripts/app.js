@@ -1,7 +1,8 @@
 /* global angular */
 (function() {
   'use strict';
-  angular.module('cashFlowApp', ['ui.router', 'ngCookies', 'ngResource'])
+  angular.module('cashFlowApp',
+      ['ui.router', 'ngCookies', 'ngResource', 'zucStringFilters', 'zucMovementsFilters'])
       .config(configRoutes);
 
 
